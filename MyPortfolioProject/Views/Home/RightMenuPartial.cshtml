@@ -15,7 +15,7 @@
                         <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                       </h2> -->
                     <p class="mt-md-3 mt-2">
-                        I Would Love to make your Ideas real. Contact me and we will discuss your projects!
+                        @*I Would Love to make your Ideas real. Contact me and we will discuss your projects!*@
                     </p>
 
                     <img src="~/Templates/iportfolio-starter/assets/images/banner.png" alt="" class="img-fluid mt-5">
@@ -26,7 +26,7 @@
                                 @foreach (var item in Model)
                                 {
 
-                                    <p><a href="tel:+404-11-22-89">+1-2345-345-678-11</a> @item.NameSurname</p>
+                                    <p><a href="tel:@item.Tel">@item.Tel</a>, @item.NameSurname</p>
                                 }
                             </li>
                             @*<li class="mt-2">

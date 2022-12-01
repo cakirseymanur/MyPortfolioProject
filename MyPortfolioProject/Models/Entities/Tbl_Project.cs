@@ -12,12 +12,13 @@ namespace MyPortfolioProject.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_Member
+    public partial class Tbl_Project
     {
-        public int MemberID { get; set; }
-        public string MemberName { get; set; }
-        public string MemberSurname { get; set; }
-        public string MemberMail { get; set; }
-        public string MemberPassword { get; set; }
+        public int MyProjectID { get; set; }
+        public string ProjectName { get; set; }
+        public string Description { get; set; }
+        public string ProjectImage { get; set; }
+        public string ProjectLink { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

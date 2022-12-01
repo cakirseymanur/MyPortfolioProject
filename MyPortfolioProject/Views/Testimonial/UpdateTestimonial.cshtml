@@ -1,0 +1,70 @@
+﻿@model MyPortfolioProject.Models.Entities.Tbl_Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href="#">
+        <i class="fa fa-wrench"></i>&nbsp;
+        Referans Güncelle
+    </a>
+</div>
+<form method="post">
+    <div class="card-body">
+        <div class="col-12">
+            <div class="row">
+                <div class="form-group col-6">
+                    @Html.HiddenFor(x => x.TestimonialID, new { @class = "form-control" })
+                    <label>Ad Soyad</label>
+                    <input type="text" class="form-control" name="NameSurname" placeholder="Referans adını giriniz..." value="@Model.NameSurname">
+                </div>
+                <div class="form-group col-6">
+                    <label>İş Yeri</label>
+                    <input type="text" class="form-control" name="Workplace" placeholder="İş yeri adını giriniz..." value="@Model.Workplace">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Meslek</label>
+                    <input type="text" class="form-control" name="Profession" placeholder="Meslek giriniz..." value="@Model.Profession">
+                </div>
+                <div class="form-group col-6">
+                    <label>Şehir</label>
+                    <input type="text" class="form-control" name="City" placeholder="Şehir giriniz..." value="@Model.City">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" name="Description" rows="3" placeholder="Açıklama giriniz...">@Model.Description</textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label>Durum</label>
+                    <select name="Status" class="form-control">
+                        @if (Model.Status == true)
+                        {
+                            <option selected value="True">Aktif</option>
+                            <option value="False">Pasif</option>
+                        }
+                        else
+                        {
+                            <option value="True">Aktif</option>
+                            <option selected value="False">Pasif</option>
+                        }
+
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Güncelle</button>
+        </div>
+    </div>
+</form>
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>
+

@@ -1,0 +1,58 @@
+﻿@model MyPortfolioProject.Models.Entities.Tbl_About
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-address-card"></i>
+        &nbsp;Hakkımda
+    </a>
+</div>
+    <form method="post">
+        <div class="card-body">
+            <div class="col-12">
+                <div class="row">
+                    <div class="form-group col-6">
+                        @Html.HiddenFor(x => x.AboutID)
+                        <label>Ad Soyad</label>
+                        <input type="text" class="form-control" name="NameSurname" placeholder="Adınız Soyadınız..." value="@Model.NameSurname">
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Ünvan</label>
+                        <input type="text" class="form-control" name="Title" placeholder="Ünvanınızı giriniz..." value="@Model.Title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label><i class="fa fa-phone"></i>&nbsp;Telefon</label>
+                        <input type="tel" class="form-control" name="Tel" placeholder="Telefon numaranızı girin..." value="@Model.Tel">
+                    </div>
+                    <div class="form-group col-6">
+                        <label><i class="fa fa-envelope"></i>&nbsp;E-mail</label>
+                        <input type="email" class="form-control" name="Email" placeholder="Email adresinizi girin..." value="@Model.Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label>Açıklama</label>
+                        <textarea class="form-control" name="Description" rows="3">@Model.Description</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label><i class="fa fa-address-book"></i>&nbsp;Adres</label>
+                        <textarea class="form-control" name="Address" rows="3">@Model.Address</textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </div>
+        </div>
+
+    </form>
+
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>

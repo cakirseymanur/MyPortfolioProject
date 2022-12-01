@@ -65,7 +65,8 @@ namespace MyPortfolioProject.Controllers
         }
         public ActionResult PortfolioIndex()
         {
-            return View();
+            var values = db.Tbl_Project.ToList();
+            return View(values);
         }
     }
 }

@@ -28,10 +28,10 @@ namespace MyPortfolioProject.Models.Entities
         public virtual DbSet<Tbl_About> Tbl_About { get; set; }
         public virtual DbSet<Tbl_Admin> Tbl_Admin { get; set; }
         public virtual DbSet<Tbl_Experience> Tbl_Experience { get; set; }
-        public virtual DbSet<Tbl_Member> Tbl_Member { get; set; }
         public virtual DbSet<Tbl_Message> Tbl_Message { get; set; }
         public virtual DbSet<Tbl_Services> Tbl_Services { get; set; }
         public virtual DbSet<Tbl_ServicesFeature> Tbl_ServicesFeature { get; set; }
         public virtual DbSet<Tbl_Testimonial> Tbl_Testimonial { get; set; }
+        public virtual DbSet<Tbl_Project> Tbl_Project { get; set; }
     }
 }

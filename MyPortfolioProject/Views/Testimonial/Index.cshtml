@@ -1,0 +1,59 @@
+﻿@using MyPortfolioProject.Models.Entities
+@model List<Tbl_Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-users"></i>&nbsp;
+        Referanslarım
+    </a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ad Soyad</th>
+            <th scope="col">İş Yeri</th>
+            <th scope="col">Meslek</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Şehir</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayac++;
+            <tr>
+                <th scope="row">@sayac</th>
+                <td>@item.NameSurname</td>
+                <td>@item.Workplace</td>
+                <td>@item.Profession</td>
+                <td>@item.Description</td>
+                <td>@item.City</td>
+                <td>
+                    @if (item.Status == true)
+                    {
+                        <label style="color:lawngreen">Aktif</label>
+                    }
+                    else
+                    {
+                        <label style="color:red">Pasif</label>
+                    }
+                            </td>
+                <td><a class="btn btn-outline-warning" href="/Testimonial/UpdateTestimonial/@item.TestimonialID">Güncelle</a></td>
+                <td><a class="btn btn-outline-danger" href="/Testimonial/DeleteTestimonial/@item.TestimonialID">Sil</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Testimonial/AddTestimonial" class="btn btn-primary">Yeni İş Deneyimi Girişi</a>

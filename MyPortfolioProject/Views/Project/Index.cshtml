@@ -1,0 +1,52 @@
+﻿@model List<MyPortfolioProject.Models.Entities.Tbl_Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-cogs"></i>
+        &nbsp; Projelerim
+    </a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Görsel</th>
+            <th scope="col">Proje Adı</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Proje URL</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayac += 1;
+        <tr>
+            <th scope="row">@sayac</th>
+            <td> <img src="~/ProjectImages/@item.ProjectImage" style="width:192px;height:108px;" /></td>
+            <td>@item.ProjectName</td>
+            <td>@item.Description</td>
+            @if (item.ProjectLink == "" || item.ProjectLink ==null)
+            {
+                <td></td>
+            }
+            else
+            {
+                <td><a href="@item.ProjectLink" target="_blank">Projeye Git</a></td>
+            }
+            <td><a class="btn btn-outline-warning" href="/Project/UpdateProject/@item.MyProjectID">Güncelle</a></td>
+            <td><a class="btn btn-outline-danger" href="/Project/DeleteProject/@item.MyProjectID">Sil</a></td>
+        </tr>
+        }
+        
+    </tbody>
+</table>
+<a href="/Project/AddProject" class="btn btn-primary">Yeni Proje Girişi</a>
+

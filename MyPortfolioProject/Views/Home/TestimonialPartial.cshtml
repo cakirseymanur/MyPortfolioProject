@@ -1,17 +1,13 @@
 ﻿@model List<MyPortfolioProject.Models.Entities.Tbl_Testimonial>
 
-<section class="w3l-clients" id="skills">
+<section class="w3l-homeblock3" id="skills">
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-3">
             <div class="row">
-                <div class="col-lg-6 align-self">
-                    <div class="position-relative px-lg-5">
-                        <img src="~/Templates/iportfolio-starter/assets/images/clients.png" alt="" class="radius-image img-fluid">
-                    </div>
-                </div>
+
                 <div class="col-lg-6 mt-lg-0 mt-5">
-                    <span class="text">Testimonials</span>
-                    <h3 class="title-big">What my <span>clients think</span> about Me</h3>
+                    <span class="text">Referanslarım</span>
+                    <h3 class="title-big"><span>Hakkımda</span> ne düşünüyorlar</h3>
                     <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-4">
                         @foreach (var item in Model)
                         {
@@ -34,6 +30,11 @@
                                 </div>
                             </div>
                         }
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self">
+                    <div class="position-relative px-lg-5">
+                        <img src="~/Templates/iportfolio-starter/assets/images/clients.png" alt="" class="radius-image img-fluid">
                     </div>
                 </div>
             </div>

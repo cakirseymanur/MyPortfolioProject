@@ -1,0 +1,44 @@
+﻿@model MyPortfolioProject.Models.Entities.Tbl_Experience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href="#">
+        <i class="fa fa-wrench"></i>&nbsp;
+        İşDeneyimi Güncelle
+    </a>
+</div>
+<form method="post">
+    <div class="card-body">
+        <div class="col-12">
+            <div class="row">
+                <div class="form-group col-6">
+                    @Html.HiddenFor(x => x.ExperienceID, new { @class = "form-control" })
+                    <label>İş Yeri</label>
+                    <input type="text" class="form-control" name="WorkplaceName" placeholder="İş yeri adını giriniz..." value="@Model.WorkplaceName">
+                </div>
+            </div> 
+            <div class="row">
+              <div class="form-group col-6">
+                  <label>Pozisyon</label>
+                  <input type="text" class="form-control" name="Position" placeholder="Pozisyon giriniz..." value="@Model.Position">
+              </div>
+            </div> 
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Açıklama</label>
+                    <input type="text" class="form-control" name="Description" placeholder="Açıklama giriniz..." value="@Model.Description">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning">Hizmeti Güncelle</button>
+        </div>
+    </div>
+</form>
+
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>

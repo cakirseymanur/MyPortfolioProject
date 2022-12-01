@@ -1,0 +1,68 @@
+﻿@model MyPortfolioProject.Models.Entities.Tbl_Project
+@{
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href="#">
+        <i class="fa fa-cogs"></i>&nbsp;
+        Proje Güncelle
+    </a>
+</div>
+@using (Html.BeginForm("UpdateProject",
+                        "Project",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+{    @Html.HiddenFor(x => x.MyProjectID, new { @class = "form-control" })
+<div class="card-body">
+    <div class="col-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Proje Adı</label>
+                <input type="text" class="form-control" name="ProjectName" value="@Model.ProjectName" placeholder="Proje adını giriniz...">
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Açıklama</label>
+                <textarea class="form-control" name="Description" rows="3" placeholder="Açıklama giriniz...">@Model.Description</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Proje Url</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <input type="text" name="ProjectLink" placeholder="Proje adresini giriniz..." value="@Model.ProjectLink" />
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Proje Görseli</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <input type="file" name="projectImage">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+</div>
+}
+
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>

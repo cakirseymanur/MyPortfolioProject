@@ -22,5 +22,6 @@ namespace MyPortfolioProject.Models.Entities
         public string Workplace { get; set; }
         public string Email { get; set; }
         public Nullable<int> Balance { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

@@ -36,16 +36,6 @@
           <Property Name="Position" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
         </EntityType>
-        <EntityType Name="Tbl_Member">
-          <Key>
-            <PropertyRef Name="MemberID" />
-          </Key>
-          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MemberName" Type="nvarchar" MaxLength="30" />
-          <Property Name="MemberSurname" Type="nvarchar" MaxLength="30" />
-          <Property Name="MemberMail" Type="nvarchar" MaxLength="30" />
-          <Property Name="MemberPassword" Type="nvarchar" MaxLength="30" />
-        </EntityType>
         <EntityType Name="Tbl_Message">
           <Key>
             <PropertyRef Name="MessageID" />
@@ -58,6 +48,17 @@
           <Property Name="MessageDate" Type="date" />
           <Property Name="MessageSubject" Type="nvarchar" MaxLength="30" />
           <Property Name="MessageContent" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Tbl_Project">
+          <Key>
+            <PropertyRef Name="MyProjectID" />
+          </Key>
+          <Property Name="MyProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProjectImage" Type="nvarchar(max)" />
+          <Property Name="ProjectLink" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Tbl_Services">
           <Key>
@@ -87,13 +88,14 @@
           <Property Name="Workplace" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Balance" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityContainer Name="DbPortfolioModelStoreContainer">
           <EntitySet Name="Tbl_About" EntityType="Self.Tbl_About" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Experience" EntityType="Self.Tbl_Experience" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tbl_Member" EntityType="Self.Tbl_Member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Message" EntityType="Self.Tbl_Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Project" EntityType="Self.Tbl_Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Services" EntityType="Self.Tbl_Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_ServicesFeature" EntityType="Self.Tbl_ServicesFeature" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Testimonial" EntityType="Self.Tbl_Testimonial" Schema="dbo" store:Type="Tables" />
@@ -133,16 +135,6 @@
           <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Tbl_Member">
-          <Key>
-            <PropertyRef Name="MemberID" />
-          </Key>
-          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MemberName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MemberSurname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MemberMail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MemberPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Tbl_Message">
           <Key>
             <PropertyRef Name="MessageID" />
@@ -176,11 +168,11 @@
           <EntitySet Name="Tbl_About" EntityType="Self.Tbl_About" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
           <EntitySet Name="Tbl_Experience" EntityType="Self.Tbl_Experience" />
-          <EntitySet Name="Tbl_Member" EntityType="Self.Tbl_Member" />
           <EntitySet Name="Tbl_Message" EntityType="Self.Tbl_Message" />
           <EntitySet Name="Tbl_Services" EntityType="Self.Tbl_Services" />
           <EntitySet Name="Tbl_ServicesFeature" EntityType="Self.Tbl_ServicesFeature" />
           <EntitySet Name="Tbl_Testimonial" EntityType="DbPortfolioModel.Tbl_Testimonial" />
+          <EntitySet Name="Tbl_Project" EntityType="DbPortfolioModel.Tbl_Project" />
         </EntityContainer>
         <EntityType Name="Tbl_Testimonial">
           <Key>
@@ -194,6 +186,18 @@
           <Property Name="Workplace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Balance" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Tbl_Project">
+          <Key>
+            <PropertyRef Name="MyProjectID" />
+          </Key>
+          <Property Name="MyProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -235,17 +239,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tbl_Member">
-            <EntityTypeMapping TypeName="DbPortfolioModel.Tbl_Member">
-              <MappingFragment StoreEntitySet="Tbl_Member">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
-                <ScalarProperty Name="MemberSurname" ColumnName="MemberSurname" />
-                <ScalarProperty Name="MemberMail" ColumnName="MemberMail" />
-                <ScalarProperty Name="MemberPassword" ColumnName="MemberPassword" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Message">
             <EntityTypeMapping TypeName="DbPortfolioModel.Tbl_Message">
               <MappingFragment StoreEntitySet="Tbl_Message">
@@ -281,6 +274,7 @@
           <EntitySetMapping Name="Tbl_Testimonial">
             <EntityTypeMapping TypeName="DbPortfolioModel.Tbl_Testimonial">
               <MappingFragment StoreEntitySet="Tbl_Testimonial">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Workplace" ColumnName="Workplace" />
@@ -289,6 +283,18 @@
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="TestimonialID" ColumnName="TestimonialID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Project">
+            <EntityTypeMapping TypeName="DbPortfolioModel.Tbl_Project">
+              <MappingFragment StoreEntitySet="Tbl_Project">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProjectLink" ColumnName="ProjectLink" />
+                <ScalarProperty Name="ProjectImage" ColumnName="ProjectImage" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="MyProjectID" ColumnName="MyProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

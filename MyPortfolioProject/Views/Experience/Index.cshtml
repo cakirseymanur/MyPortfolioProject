@@ -1,0 +1,43 @@
+﻿@using MyPortfolioProject.Models.Entities
+@model List<Tbl_Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-briefcase"></i>&nbsp;
+        İş Deneyimlerim
+    </a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İş Yeri</th>
+            <th scope="col">Pozisyon</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayac ++;
+            <tr>
+                <th scope="row">@sayac</th>
+                <td>@item.WorkplaceName</td>
+                <td>@item.Position</td>
+                <td>@item.Description</td>
+                <td><a class="btn btn-outline-warning" href="/Experience/UpdateExperience/@item.ExperienceID">Güncelle</a></td>
+                <td><a class="btn btn-outline-danger" href="/Experience/DeleteExperience/@item.ExperienceID">Sil</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Experience/AddExperience" class="btn btn-primary">Yeni İş Deneyimi Girişi</a>

@@ -1,0 +1,39 @@
+﻿@using MyPortfolioProject.Models.Entities
+@model List<Tbl_Services>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-cogs"></i>&nbsp;
+        Hizmetlerim
+    </a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayac += 1;
+            <tr>
+                <th scope="row">@sayac</th>
+                <td>@item.Title</td>
+                <td><a class="btn btn-outline-warning" href="/Services/UpdateService/@item.ServicesID">Güncelle</a></td>
+                <td><a class="btn btn-outline-danger" href="/Services/DeleteService/@item.ServicesID">Sil</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Services/AddService" class="btn btn-primary">Yeni Hizmet Girişi</a>

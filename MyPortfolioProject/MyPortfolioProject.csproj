@@ -128,7 +128,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,10 +164,10 @@
     <Compile Include="Models\Entities\Tbl_Experience.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\Tbl_Member.cs">
+    <Compile Include="Models\Entities\Tbl_Message.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\Tbl_Message.cs">
+    <Compile Include="Models\Entities\Tbl_Project.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Tbl_Services.cs">
@@ -214,6 +222,10 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Templates\iportfolio-starter\assets\css\style-starter.css" />
     <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\19220.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\19963.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\1_4_IphsvJ4BRuSlUg8k4OsA.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\7094814.jpg" />
     <Content Include="Templates\iportfolio-starter\assets\images\about.jpg" />
     <Content Include="Templates\iportfolio-starter\assets\images\award.png" />
     <Content Include="Templates\iportfolio-starter\assets\images\award1.png" />
@@ -230,6 +242,7 @@
     <Content Include="Templates\iportfolio-starter\assets\images\file.png" />
     <Content Include="Templates\iportfolio-starter\assets\images\file1.png" />
     <Content Include="Templates\iportfolio-starter\assets\images\file2.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\istockphoto-1354569480-612x612.jpg" />
     <Content Include="Templates\iportfolio-starter\assets\images\skills.png" />
     <Content Include="Templates\iportfolio-starter\assets\images\team1.jpg" />
     <Content Include="Templates\iportfolio-starter\assets\images\team2.jpg" />
@@ -251,6 +264,24 @@
     <Content Include="Templates\iportfolio-starter\index.html" />
     <Content Include="Templates\iportfolio-starter\portfolio.html" />
     <Content Include="Templates\iportfolio-starter\starter-license-W3Layouts.txt" />
+    <Content Include="Templates\login-to-everdwell\dist\index.html" />
+    <Content Include="Templates\login-to-everdwell\dist\script.js" />
+    <Content Include="Templates\login-to-everdwell\dist\style.css" />
+    <Content Include="Templates\login-to-everdwell\LICENSE.txt" />
+    <Content Include="Templates\login-to-everdwell\src\index.html" />
+    <Content Include="Templates\login-to-everdwell\src\script.js" />
+    <Content Include="Templates\sidebar\bootstrap-3\index.html" />
+    <Content Include="Templates\sidebar\bootstrap-3\index2.html" />
+    <Content Include="Templates\sidebar\bootstrap-3\index3.html" />
+    <Content Include="Templates\sidebar\bootstrap-3\index4.html" />
+    <Content Include="Templates\sidebar\bootstrap-3\index5.html" />
+    <Content Include="Templates\sidebar\bootstrap-3\style.css" />
+    <Content Include="Templates\sidebar\bootstrap-3\style2.css" />
+    <Content Include="Templates\sidebar\bootstrap-3\style3.css" />
+    <Content Include="Templates\sidebar\bootstrap-3\style4.css" />
+    <Content Include="Templates\sidebar\bootstrap-3\style5.css" />
+    <Content Include="Templates\sidebar\index2.html" />
+    <Content Include="Templates\sidebar\style2.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,7 +291,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.eot" />
@@ -279,9 +309,30 @@
     <Content Include="Views\Home\ContactIndex.cshtml" />
     <Content Include="Views\Home\PageEndPartial.cshtml" />
     <Content Include="Views\Home\PortfolioIndex.cshtml" />
+    <Content Include="Views\Shared\_NewAdminLayout.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Services\AddService.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Services\UpdateService.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
+    <Content Include="Views\Experience\AddExperience.cshtml" />
+    <Content Include="Views\Experience\UpdateExperience.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\AddProject.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Templates\login-to-everdwell\README.md" />
+    <Content Include="Templates\login-to-everdwell\src\style.scss" />
+    <Content Include="Views\Project\UpdateProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ProjectImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

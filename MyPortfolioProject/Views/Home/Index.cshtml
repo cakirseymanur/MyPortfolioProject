@@ -14,7 +14,6 @@ Author URL: http://w3layouts.com
     <!--header-->
     @Html.Partial("HeaderPartial")
     <!--/header-->
-    
     <!-- Domain Modal -->
     @{Html.RenderAction("RightMenuPartial", "Home");}
     <!-- //Domain modal -->
@@ -22,12 +21,12 @@ Author URL: http://w3layouts.com
     @{Html.RenderAction("AboutPartial", "Home");}
     <!-- //banner section -->
     <!-- home page about section -->
-    @{ Html.RenderAction("ServicePartial", "Home");}
-    <!-- //home page about section -->
-    <!-- home page about section -->
-    <!-- //home page about section -->
-    <!-- home page about section -->
     @{ Html.RenderAction("ExperiencePartial", "Home");}
+    <!-- //home page about section -->
+    <!-- home page about section -->
+    <!-- //home page about section -->
+    <!-- home page about section -->
+    @{ Html.RenderAction("ServicePartial", "Home");}
     <!-- //home page about section -->
     <!-- home page about section -->
     @{ Html.RenderAction("TestimonialPartial", "Home");}
@@ -194,21 +193,18 @@ Author URL: http://w3layouts.com
             $('.navbar-toggler').click(function () {
                 $('body').toggleClass('noscroll');
             })
-        });
-    </script>
+        });</script>
     <!-- disable body scroll which navbar is in active -->
     <!-- MENU-JS -->
     <script>
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
-
             if (scroll >= 80) {
                 $("#site-header").addClass("nav-fixed");
             } else {
                 $("#site-header").removeClass("nav-fixed");
             }
         });
-
         //Main navigation Active Class Add Remove
         $(".navbar-toggler").on("click", function () {
             $("header").toggleClass("active");
@@ -222,11 +218,10 @@ Author URL: http://w3layouts.com
                     $("header").removeClass("active");
                 }
             });
-        });
-    </script>
+        });</script>
     <!-- //MENU-JS -->
     <!-- bootstrap -->
-    <script src="~/Templates/iportfolio-starter/~/Templates/iportfolio-starter/assets/js/bootstrap.min.js"></script>
+    <script src="~/Templates/iportfolio-starter/assets/js/bootstrap.min.js"></script>
 
 </body>
 
