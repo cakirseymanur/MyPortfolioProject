@@ -48,6 +48,7 @@
           <Property Name="MessageDate" Type="date" />
           <Property Name="MessageSubject" Type="nvarchar" MaxLength="30" />
           <Property Name="MessageContent" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Tbl_Project">
           <Key>
@@ -147,6 +148,7 @@
           <Property Name="MessageDate" Type="DateTime" Precision="0" />
           <Property Name="MessageSubject" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MessageContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="Tbl_Services">
           <Key>
@@ -242,6 +244,7 @@
           <EntitySetMapping Name="Tbl_Message">
             <EntityTypeMapping TypeName="DbPortfolioModel.Tbl_Message">
               <MappingFragment StoreEntitySet="Tbl_Message">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
                 <ScalarProperty Name="SenderMail" ColumnName="SenderMail" />
                 <ScalarProperty Name="RecieverMail" ColumnName="RecieverMail" />

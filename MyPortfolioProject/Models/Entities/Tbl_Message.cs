@@ -22,5 +22,6 @@ namespace MyPortfolioProject.Models.Entities
         public Nullable<System.DateTime> MessageDate { get; set; }
         public string MessageSubject { get; set; }
         public string MessageContent { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

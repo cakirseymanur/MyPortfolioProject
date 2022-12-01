@@ -41,7 +41,7 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult TestimonialPartial()
         {
-            var values = db.Tbl_Testimonial.ToList();
+            var values = db.Tbl_Testimonial.Where(i=>i.Status==true).ToList();
             return PartialView(values);
         }
         public PartialViewResult RightMenuPartial()

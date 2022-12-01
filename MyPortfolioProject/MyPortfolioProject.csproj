@@ -133,6 +133,7 @@
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
@@ -329,6 +330,8 @@
     <Content Include="Templates\login-to-everdwell\README.md" />
     <Content Include="Templates\login-to-everdwell\src\style.scss" />
     <Content Include="Views\Project\UpdateProject.cshtml" />
+    <Content Include="Views\Message\Inbox.cshtml" />
+    <Content Include="Views\Message\MesseageDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

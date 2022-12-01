@@ -1,0 +1,50 @@
+﻿@model List<MyPortfolioProject.Models.Entities.Tbl_Message>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<div class=" card" style="border:none;font-weight:bold">
+    <a href=#>
+        <i class="fa fa-envelope"></i>
+        &nbsp; Mesajlarım
+    </a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"></th>
+            <th scope="col">Ad Soyad</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">İncele</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayac += 1;
+        <tr>
+            <th scope="row">@sayac</th>
+            @if (item.Status == true)
+            {
+                <td><i class="fa fa-envelope-open" style="color:orange" aria-hidden="true"></i></td>
+            }
+            else
+            {
+                <td><i class="fa fa-envelope" style="color:orange" aria-hidden="true"></i></td>
+            }
+            <td>@item.SenderNameSurname</td>
+            <td>@item.MessageSubject</td>
+            <td>@Convert.ToDateTime(item.MessageDate).ToShortDateString()</td>
+            <td><a class="btn btn-outline-warning" href="/Message/MesseageDetails/@item.MessageID">Oku</a></td>
+            <td><a class="btn btn-outline-danger" href="/Message/DeleteMesseage/@item.MessageID">Sil</a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>

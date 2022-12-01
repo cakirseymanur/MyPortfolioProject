@@ -24,7 +24,8 @@ namespace MyPortfolioProject.Controllers
             if (values != null)
             {
                 FormsAuthentication.SetAuthCookie(values.UserName, false);
-                Session["UserName"] = p.UserName;
+                var bisey = db.Tbl_Message.Where(x => x.Status == false).Count();
+                Session["NewMessage"] = db.Tbl_Message.Where(x => x.Status == false).Count();
                 return RedirectToAction("Index", "About");
             }
             else
@@ -36,7 +37,7 @@ namespace MyPortfolioProject.Controllers
 
         public ActionResult LogOut()
         {
-            Session.Remove("UserName");
+            Session.Remove("NewMessage");
             return RedirectToAction("Index");
         }
     }

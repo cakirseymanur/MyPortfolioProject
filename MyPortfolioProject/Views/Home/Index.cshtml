@@ -63,12 +63,11 @@ Author URL: http://w3layouts.com
     </script>
     <!-- /move top -->
     <!-- jQuery and Bootstrap JS -->
-    <script src="~/Templates/iportfolio-starter/assets/js/jquery-3.3.1.min.js"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    @*<script src="~/Templates/iportfolio-starter/assets/js/jquery-3.3.1.min.js"></script>*@
     <script src="~/Templates/iportfolio-starter/assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
     <!-- owlcarousel -->
     <script src="~/Templates/iportfolio-starter/assets/js/owl.carousel.js"></script>
-
     <!-- script for tesimonials carousel slider -->
     <script>
         $(document).ready(function () {
@@ -221,6 +220,28 @@ Author URL: http://w3layouts.com
         });</script>
     <!-- //MENU-JS -->
     <!-- bootstrap -->
+
+    <script>
+        $("#sendMessage").click(function () {
+            debugger;
+            let messageValues = {
+                SenderNameSurname: $("#w3lName").val(),
+                SenderMail: $("#w3lSender").val(),
+                MessageSubject: $("#w3lSubject").val(),
+                MessageContent: $("#w3lMessage").val()
+            };
+            $.ajax({
+                dataType: "json",
+                type: "post",
+                data: messageValues,
+                url: "/Message/SendMesseage/",
+                success: function (funk) {
+                    let result = jQuery.parseJSON(funk2);
+                    $('#messageForm')[0].reset();
+                }
+            });
+        });
+    </script>
     <script src="~/Templates/iportfolio-starter/assets/js/bootstrap.min.js"></script>
 
 </body>
