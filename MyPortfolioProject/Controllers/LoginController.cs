@@ -25,7 +25,6 @@ namespace MyPortfolioProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.UserName, false);
                 var bisey = db.Tbl_Message.Where(x => x.Status == false).Count();
-                Session["NewMessage"] = db.Tbl_Message.Where(x => x.Status == false).Count();
                 return RedirectToAction("Index", "About");
             }
             else

@@ -6,39 +6,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>I,Portfolio</title>
     <meta charset="UTF-8">
-    <title>I,Portfolio - Giriş</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link href="~/Templates/login-to-everdwell/dist/style.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/Templates/login-form-17/css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- partial:index.partial.html -->
-    <form method="post" id="login-form">
-        <div class="heading">Hoş Geldiniz</div>
-        <div class="left">
-            <div class="connect">Admin Girişi</div>
-            <label>Kullanıcı Adı</label> <br />
-            <input type="text" class="form-control" name="UserName"/> <br />
-            <label >Şifre</label> <br />
-            <input type="password" class="form-control" name="Password"/> <br />
-            <button type="submit" class="btn btn-primary">Giriş</button>
-        </div>
-        <div class="right">
-            <div class="connect"></div>
-           
-            <a href='@Url.Action("Index","Home")' class="twitter">
-                <!--       <span class="fontawesome-twitter"></span> -->
-                <i class="connect" style="font-style: normal;" aria-hidden="true">Profilimi İncele</i>
-            </a> <br />
-           
-        </div>
-    </form>
-    <!-- partial -->
-    <script src="~/Templates/login-to-everdwell/dist/script.js"></script>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">I,Portfolio</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2>Hoş Geldiniz</h2>
+                                <p>Profilimi incelek ister misin?</p>
+                                <a href="/Home/Index" class="btn btn-white btn-outline-white">Profili Gör</a>
+                            </div>
+                        </div>
+                        <div class="login-wrap p-4 p-lg-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Admin</h3>
+                                </div>
 
+                            </div>
+                            <form method="post" class="signin-form">
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Kullanıcı Adı</label>
+                                    <input type="text" class="form-control" name="UserName" placeholder="Kullanıcı Adı" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Şifre</label>
+                                    <input type="password" name="Password" class="form-control" placeholder="Şifre" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/Templates/login-form-17/js/jquery.min.js"></script>
+    <script src="~/Templates/login-form-17/js/popper.js"></script>
+    <script src="~/Templates/login-form-17/js/bootstrap.min.js"></script>
+    <script src="~/Templates/login-form-17/js/main.js"></script>
 </body>
 </html>
+

@@ -11,9 +11,9 @@
                 <div class="modal__content">
                     <a class="navbar-brand"> <span>I, Portfolio </span></a>
                     <!-- if logo is image enable this
-                      <h2 class="logo">
-                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                      </h2> -->
+      <h2 class="logo">
+        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+      </h2> -->
                     <p class="mt-md-3 mt-2">
                         @*I Would Love to make your Ideas real. Contact me and we will discuss your projects!*@
                     </p>
@@ -29,9 +29,6 @@
                                     <p><a href="tel:@item.Tel">@item.Tel</a>, @item.NameSurname</p>
                                 }
                             </li>
-                            @*<li class="mt-2">
-                                <p><a href="mailto:design@portfolio.com">design@portfolio.com</a></p>
-                            </li>*@
                         </ul>
                     </div>
                     <div class="widget-social-icons mt-sm-5 mt-4">
@@ -40,7 +37,9 @@
                             <li><a href="https://github.com/cakirseymanur"><span class="fa fa-git"></span></a></li>
                         </ul>
                     </div>
-
+                    <div class="widget-social-icons mt-sm-5 mt-4" align="center">
+                        <li><a href='@Url.Action("Index","Login")' class="fa fa-lock"> <span>Admin</span></a></li>
+                    </div>
 
                 </div>
             </div>

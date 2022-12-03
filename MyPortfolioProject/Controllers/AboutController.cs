@@ -21,13 +21,14 @@ namespace MyPortfolioProject.Controllers
         [HttpPost]
         public ActionResult Index(Tbl_About about)
         {
-            var values = db.Tbl_About.Find(about.AboutID);
+            Tbl_About values = db.Tbl_About.Find(about.AboutID);
             values.Address = about.Address;
             values.Description = about.Description;
             values.Email = about.Email;
             values.NameSurname = about.NameSurname;
             values.Tel = about.Tel;
             values.Title = about.Title;
+            values.ImageUrl =about.ImageUrl;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -16,7 +16,7 @@ namespace MyPortfolioProject.Controllers
         DbMyPortfolioEntities db = new DbMyPortfolioEntities();
         public ActionResult Inbox()
         {
-           
+            ViewBag.newMessage = db.Tbl_Message.Where(x => x.Status == false).Count();
             var values = db.Tbl_Message.OrderByDescending(i=>i.MessageDate).ToList();
             return View(values);
         }
